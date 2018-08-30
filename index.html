@@ -53,10 +53,14 @@
 
     <script>
         setInterval(() => {
-            // Refresh Calendars
-            document.querySelector("iframe#lukas-schedule").src = document.querySelector("iframe#lukas-schedule").src;
-            document.querySelector("iframe#gaby-schedule").src = document.querySelector("iframe#gaby-schedule").src;
-        }, 15000);
+            var date = new Date(); // Create a Date object to find out what time it is
+            if (date.getHours() === 0 && date.getMinutes() === 0) { // Check the time
+                // Refresh Calendars every midnight
+                document.querySelector("iframe#lukas-schedule").src = document.querySelector("iframe#lukas-schedule").src;
+                document.querySelector("iframe#gaby-schedule").src = document.querySelector("iframe#gaby-schedule").src;
+            }
+        }, 60000); // Check every minute
+
     </script>
 </body>
 
