@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Pi Monitor</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: "lukas-schedule weather1" "gaby-schedule weather2";
+            grid-gap: 10px;
+        }
+
+        #lukas-schedule {
+            grid-area: lukas-schedule
+        }
+
+        #gaby-schedule {
+            grid-area: gaby-schedule
+        }
+
+        #weather1 {
+            grid-area: weather1
+        }
+
+        #weather2 {
+            grid-area: weather2
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <iframe id="lukas-schedule" src="https://calendar.google.com/calendar/b/1/embed?showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=nchit2fh0iurgjrdc4kvfq42n0th8u0e%40import.calendar.google.com&amp;color=%23B1440E&amp;ctz=America%2FNew_York"
+            style="border-width:0" frameborder="0" scrolling="no"></iframe>
+
+        <iframe id="gaby-schedule" src="https://calendar.google.com/calendar/embed?showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;hl=en&amp;bgcolor=%23FFFFFF&amp;src=o3vk0693hufgh9fod9dff204kb5ssdk9%40import.calendar.google.com&amp;color=%232F6309&amp;ctz=America%2FNew_York"
+            style="border-width:0" frameborder="0" scrolling="no"></iframe>
+
+
+        <div id="weather1">
+            <script type='text/javascript' src='https://darksky.net/widget/default/34.8269,-82.5817/us12/en.js?width=100%&height=350&title=Easley, SC&textColor=333333&bgColor=transparent&transparency=true&skyColor=333333&fontFamily=Default&customFont=&units=us&htColor=333333&ltColor=C7C7C7&displaySum=yes&displayHeader=yes'></script>
+        </div>
+        <div id="weather2">
+            <script type='text/javascript' src='https://darksky.net/widget/graph-bar/34.8269,-82.5817/us12/en.js?width=100%&height=400&title=Full Forecast&textColor=333333&bgColor=FFFFFF&transparency=true&skyColor=undefined&fontFamily=Default&customFont=&units=us&timeColor=333333&tempColor=333333&currentDetailsOption=true'></script>
+        </div>
+    </div>
+</body>
+
+</html>
