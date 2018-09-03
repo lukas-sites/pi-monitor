@@ -68,6 +68,18 @@
             <script type='text/javascript' src='https://darksky.net/widget/graph-bar/34.8269,-82.5817/us12/en.js?width=100%&height=400&title=Full Forecast&textColor=333333&bgColor=FFFFFF&transparency=true&skyColor=undefined&fontFamily=Default&customFont=&units=us&timeColor=333333&tempColor=333333&currentDetailsOption=true'></script>
         </div>
     </div>
+
+    <script>
+        setInterval(() => {
+            var date = new Date(); // Create a Date object to find out what time it is
+            if (date.getHours() === 0 && date.getMinutes() === 0) { // Check the time
+                // Refresh Calendars every midnight
+                document.querySelector("iframe#lukas-schedule").src = document.querySelector("iframe#lukas-schedule").src;
+                document.querySelector("iframe#gaby-schedule").src = document.querySelector("iframe#gaby-schedule").src;
+            }
+        }, 60000); // Check every minute
+
+    </script>
 </body>
 
 </html>
