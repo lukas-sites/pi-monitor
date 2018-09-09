@@ -4,8 +4,9 @@
 <head>
     <title>Pi Monitor</title>
     <style>
+        html,
         body {
-            background-color: aqua;
+            margin: 0;
         }
 
         .container {
@@ -16,6 +17,7 @@
             grid-gap: 10px;
             width: 100vw;
             height: 100vh;
+            background-color: rgba(255, 255, 255, 0.4);
         }
 
         #lukas-schedule {
@@ -70,15 +72,26 @@
     </div>
 
     <script>
+        const body = document.querySelector('body');
+        function updateBackground() {
+            fetch("https://source.unsplash.com/random/1920x1080")
+                .then(response => body.style.background = `url('${response.url}')`);
+        }
+
+        updateBackground();
         setInterval(() => {
             var date = new Date(); // Create a Date object to find out what time it is
             if (date.getHours() === 0 && date.getMinutes() === 0) { // Check the time
-                // Refresh Calendars every midnight
-                document.querySelector("iframe#lukas-schedule").src = document.querySelector("iframe#lukas-schedule").src;
-                document.querySelector("iframe#gaby-schedule").src = document.querySelector("iframe#gaby-schedule").src;
+                // Refresh all iframes
+                let iframes = document.querySelectorAll('iframe');
+                for (let iframe of iframes)
+                    iframe.src = iframe.src;
             }
         }, 60000); // Check every minute
 
+        setInterval(() => {
+            updateBackground();
+        }, 300000); // Refresh background every 5 minutes
     </script>
 </body>
 
