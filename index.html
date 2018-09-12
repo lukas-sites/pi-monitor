@@ -82,10 +82,9 @@
         setInterval(() => {
             var date = new Date(); // Create a Date object to find out what time it is
             if (date.getHours() === 0 && date.getMinutes() === 0) { // Check the time
-                // Refresh all iframes
-                let iframes = document.querySelectorAll('iframe');
-                for (let iframe of iframes)
-                    iframe.src = iframe.src;
+                setTimeout(function(){ 
+                    window.location.href = window.location.href;
+                }, 1000);
             }
         }, 60000); // Check every minute
 
