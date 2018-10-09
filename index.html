@@ -17,7 +17,7 @@
             grid-gap: 10px;
             width: 100vw;
             height: 100vh;
-            background-color: rgba(255, 255, 255, 0.4);
+/*             background-color: rgba(255, 255, 255, 0.4); */
         }
 
         #lukas-schedule {
@@ -78,7 +78,7 @@
                 .then(response => body.style.background = `url('${response.url}')`);
         }
 
-        updateBackground();
+//         updateBackground();
         setInterval(() => {
             var date = new Date(); // Create a Date object to find out what time it is
             if (date.getHours() === 0 && date.getMinutes() === 0) { // Check the time
@@ -88,9 +88,9 @@
             }
         }, 60000); // Check every minute
 
-        setInterval(() => {
-            updateBackground();
-        }, 300000); // Refresh background every 5 minutes
+//         setInterval(() => {
+//             updateBackground();
+//         }, 300000); // Refresh background every 5 minutes
     </script>
 </body>
 
